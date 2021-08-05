@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title></title> 
-	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
-	<link rel="stylesheet" href="css/login.css">
-    <link rel="icon" href="img/Vivadentlogoresult.png" type="image/x-icon">
-	
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="csslogin.css">
+</head>
+<body> 
+    <hgroup>
+      <img src="Vivadentlogoresult.png" alt="logo de Vivadent" height="60vh" width="auto">
+        <h1>Vivadent</h1>
+        
+      </hgroup>
+      <form>
+        <div class="group">
+           
+          <input type="email"><span class="highlight"></span><span class="bar"></span>
+          <label>Email</label>
+        </div>
+        <div class="group">
+          <input type="password"><span class="highlight"></span><span class="bar"></span>
+          <label>Contraseña</label>
+        </div>
+        <button type="button" class="button buttonBlue">Inicia sesion
+          <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>
 
-</head>  
-<body>
-    <form class="formulario">
-    
-    <h1>Inicia sesion</h1>
-     <div class="contenedor">
-     
-         <div class="input-contenedor">
-         <i class="fas fa-envelope icon"></i>
-         <input type="text" v-model="persona.usuario" type="text" name="usuario" value="" id="nombre" placeholder="Correo Electronico">
-         
-         </div>
-         
-         <div class="input-contenedor">
-        <i class="fas fa-key icon"></i>
-         <input type="password" v-model="persona.contraseña" type="text" name="contraseña" value="" placeholder="" id="contraseña" placeholder="Contraseña">
-         
-         </div>
          <input type="button" @click="enviardatos" value="Inicia sesion" class="button">
          <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
          <p><a href="registroEM">¿No tienes una cuenta?<a> <a href="inicio.html" class="link">Registarse </a></p>
