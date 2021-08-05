@@ -1,0 +1,36 @@
+<?php
+    
+    namespace proyecto;
+ 
+
+    use PDO;
+    use function json_encode;
+
+    /**
+     * Class Horarios
+     */
+    
+    class horarios extends modelshorarios
+    {
+        /**
+         * @var array
+         */
+        protected $filleable = ["horasE", "horasS"];
+        protected $table = "horarios";
+        public $horasE = "";
+        public $horasS = "";
+        
+        
+    
+    
+        /*public function PersonaMayores($edad){
+            
+            $stmt = self::$pdo->prepare("select *  from $this->table  where  edad>=:edad");
+            $stmt->bindParam(":edad",$edad);
+            $stmt->execute();
+            $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);
+            return  json_encode($resultados);
+        }*/
+        
+        
+    }

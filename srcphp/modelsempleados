@@ -1,0 +1,146 @@
+<?php
+    
+    namespace proyecto;
+    
+   
+    use PDO;
+    use proyecto\Conexion;
+    use function json_encode;
+
+    class modelsempleados
+    {
+        /**
+         * Models constructor.
+         */
+        protected $filleable = [];
+        public static $pdo = null;
+        protected $table = "";
+        protected  $id="";
+        
+        public function __construct()
+        {
+            $cc = new  Conexion("vivadent", "127.0.0.1", "root", "Juan1812");
+            self::$pdo = $cc->getPDO();
+        }
+
+        public function insertar()
+        {
+            if(isset($_POST['registar']))
+            {
+                if(strlen($_POST['name']) >= 1 && strlen($_POST['correo']) >= 1 && strlen($_POST['contra']) >= 1 && strlen($_POST['telefono']) >= 1 && strlen($_POST['edad']) >= 1 && strlen($_POST['genero']) >= 1 && strlen($_POST['direccion']) >= 1 && strlen($_POST['especialidad']) >= 1 && strlen($_POST['codval']) >= 1 && strlen($_POST['horario']) >= 1 )
+                {
+                    $nombre = trim($_POST['name']);
+                    $correo = trim($_POST['correo']);
+                    $contra = trim($_POST['contra']);
+                    $telefono = trim($_POST['telefono']);
+                    $edad = trim($_POST['edad']);
+                    $genero = trim($_POST['genero']);
+                    $direccion = trim($_POST['direccion']);
+                    $especialidad = trim($_POST['especialidad']);
+                    $codval = trim($_POST['codval']);
+                    $horario = trim($_POST['horario']);
+                    $consulta = "INSERT INTO `empleados`(`nombre`, `correo`, `contraseña`, `teléfono`, `edad`, `genero`, `direccion`, `especialidad`, `codval`, `horario`) VALUES ('$nombre','$correo','$contra','$telefono','$edad','$genero','$direccion','$especialidad','$codval','$horario')";
+                    $resultado = mysqli_query($conex,$consulta);
+
+                    if($resultado)
+                    {
+                        ?>
+                        <script> alert('Te has registrado correctamente!'); </script>
+                        <?php
+                    } 
+                    else
+                    {
+                        ?>
+                        <script> alert('ocurrio un error!'); </script>
+                        <?php
+                    }
+                }
+                else 
+                {
+                    ?>
+                    <script> alert('complete los campos!'); </script>
+                    <?php
+                }
+            }
+        }
+
+        public function create(array $obj)
+        {
+            $campos = "(";
+            $valores = "(";
+            $long = count($obj);
+            $i = 0;
+            foreach ($obj as $prop => $val) {
+                $i++;
+                $campos .= $prop;
+                $campos .= $long > $i ? "," : "";
+                
+                $valores .= ":" . $prop;
+                $valores .= $long > $i ? "," : "";
+            }
+
+            $campos .= " )";
+            $valores .= " )";
+            $stmt = self::$pdo->prepare("INSERT INTO $this->table   $campos VALUES  $valores");
+            
+            foreach ($obj as $prop => $val) {
+                $stmt->bindValue(":$prop", $val);
+            }
+            $stmt->execute();
+        }
+
+        public function save()
+        {
+            $ob = [];
+            foreach ($this->filleable as $campo) {
+               
+                $ob[$campo] = $this->$campo;
+            
+            }
+            $this->create($ob);
+        }
+
+        public function all(){
+          
+          
+            $stmt = self::$pdo->prepare("select * from $this->table");
+
+            $stmt->execute();
+
+            $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+
+            return  json_encode($resultados);
+        }
+        
+        
+        public function delete($id){
+            
+            try{
+                $cid= $this->id!=""?$this->id:"id";
+                $stmt = self::$pdo->prepare("delete from $this->table where $cid=:id");
+                $stmt->bindParam(":id",$id);
+                $stmt->execute();
+                }
+            catch (Exception $e) {
+                return $e;
+            }
+        }
+        public function deleteAll(){
+            $stmt = self::$pdo->prepare("delete  from $this->table ");
+            $stmt->execute();
+        }
+        public function find($id){
+            $cid= $this->id!=""?$this->id:"id";
+            $stmt = self::$pdo->prepare("select *  from $this->table  where  $cid=:id");
+            $stmt->bindParam(":id",$id);
+            $stmt->execute();
+            $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);
+            if($resultados==null){
+                return  json_encode([]);
+            }
+            return  json_encode($resultados[0]);
+        }
+       
+        
+    }

@@ -1,0 +1,205 @@
+.container {
+    max-height: 124px;
+  width: 85%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.header {
+  background: #333;
+  color: white;
+  padding: 2rem 0;
+
+  /* hacer el menu fijo */
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* ocuapamos todo el ancho */
+  right: 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo-nav-container {
+  display: flex;
+  justify-content: space-between;
+  /* lo alineamos al centro */
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+
+/* logo */
+.logo {
+  letter-spacing: 10px;
+  font-size: 1.3em;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* todos los "ul" que esten dentro de "navigation" */
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation ul li {
+  /* uno al lado del otro */
+  display: inline-block;
+}
+
+/* los enlaces dentro del menu */
+.navigation ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s linear;
+  border-radius: 5px;
+}
+
+.navigation ul li a:hover {
+  background: #9b9898;
+}
+
+.main {
+  padding-top: 12rem;
+}
+
+/*PIE DE PAGINA*/
+
+.menu-link{
+    color: black;
+}
+
+.fb{
+    color: blue;
+}
+/* REPONSIVE */
+/* todas las caracteristicas que se mostraran a continuancion seran cuando tenga un ancho maximo de 767px */
+
+@media only screen and (max-width: 1000px) {
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+
+    .navigation{
+        width: 100%;
+    }
+    .navigation ul{
+        display: none;
+    }
+    .navigation ul.show{
+        display: block;
+    }
+      
+    .navigation ul li {
+        display: block;
+      }
+      
+      /* los enlaces dentro del menu */
+      .navigation ul li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        transition: all 0.2s linear;
+        border-radius: 5px;
+      }
+      
+      .navigation ul li a:hover {
+        background: #cc4444;
+      }
+}
+.conpri{
+    height: 500px;
+    width: 100%;
+    background-color: rgb(172, 169, 172);
+    margin-top: 105px;
+    
+    margin-bottom: 30px;
+}
+.age{
+    font-family: "Lato" -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: 35px;
+}
+input{
+    border: 1px solid black;
+}
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.lab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.footer {
+    display:grid;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: .25rem;
+    border-width: 0;
+    grid-template-areas: "foo1 foo2 foo3";
+    height:200px;
+    width: 100vw;
+    margin-left:1px;
+}
+
+.foo1{
+    grid-area: foo1;
+    border-bottom: 5px solid #ebe3f0;
+    border-radius: .25rem;
+    background-color: #fff;
+}
+
+.foo2{
+    grid-area: foo2;
+    border-bottom: 5px solid #ebe3f0;
+    border-radius: .25rem;
+    background-color: #fff;
+}
+
+.foo3{
+    grid-area: foo3;
+    border-bottom: 5px solid #ebe3f0;
+    border-radius: .25rem;
+    background-color: #fff;
+    
+}
+.mapa{
+    display: flex;
+    height: auto;
+    width: auto;
+    
+    background-color: #333;
+}
+.fo1 h2{
+    color: white;
+}
+.fo1{
+    grid-area: fo1;
+    justify-content: center;
+    align-items: center;
+    margin: 200px;
+}
+.mapa .fo1 span:nth-child(1)
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #ebe3f0);
+    animation: animacion1 2s linear infinite;
+}
+.map{
+    grid-area: map;
+}

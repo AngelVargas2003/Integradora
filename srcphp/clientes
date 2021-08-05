@@ -1,0 +1,70 @@
+<?php
+    
+    namespace proyecto;
+ 
+
+    use PDO;
+    use function json_encode;
+    use proyecto\Conexion;
+    use proyecto\modelsclientes;
+
+    /**
+     * Class Cliente
+     */
+    $objcliente = new objcli;
+    $modelsclientes = new modelsclientes;
+
+    $nombre = $_POST['nombre'];
+    $correo = $_POST['correo'];
+    $contra = $_POST['contra'];
+    $telefono = $_POST['telefono'];
+    $edad = $_POST['edad'];
+    $genero = $_POST['genero'];
+    $direccion = $_POST['direccion'];
+
+        $objcliente->nombre=$nombre;
+        $objcliente->correo=$correo;
+        $objcliente->contra=$contra;
+        $objcliente->telefono=$telefono;
+        $objcliente->edad=$edad;
+        $objcliente->genero=$genero;
+        $objcliente->direccion=$direccion;
+
+        if(isset($_POST['registar']))
+        {
+            $modelsclientes->registarcli($objcliente);
+            
+        }
+
+    class clientes extends modelsclientes
+    {
+        
+        
+        /**
+         * @var array
+         */
+        protected $filleable = ["nombre", "correo", "contraseña", "teléfono", "edad", "genero", "direccion"];
+        protected $table = "clientes";
+
+        public $nombre = "";
+        public $correo = "";
+        public $contraseña = "";
+        public $teléfono = "";
+        public $edad = "";
+        public $genero = "";
+        public $direccion = "";
+
+        
+    
+    
+        /*public function PersonaMayores($edad){
+            
+            $stmt = self::$pdo->prepare("select *  from $this->table  where  edad>=:edad");
+            $stmt->bindParam(":edad",$edad);
+            $stmt->execute();
+            $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);
+            return  json_encode($resultados);
+        }*/
+        
+        
+    }

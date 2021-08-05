@@ -1,0 +1,106 @@
+body{
+	background-color: #632432;
+	font-family: Arial;
+}
+
+
+.header{
+    width: 100vw;
+    
+}
+
+.infotelefono{
+    background-color: #dcd9d9;
+}
+
+.infotelefono div{
+    margin-left: 40px;
+}
+
+.telini{
+    color: #fff;
+    margin-left: 20px;
+}
+
+.menu{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0 28px;
+    height: 85px;
+    background-color: rgb(0, 0, 0);
+    width:100vw;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menulogo{
+    margin-left:40px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.menuop1,
+.menuop2{
+    display: inline-block;
+    color:#fff;
+}
+
+.menuinfo{
+    margin-right:50px;
+    
+}
+
+#main-container{
+	margin: 100px auto;
+	width: 600px;
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background-color: rgb(0, 0, 0);
+	border-bottom: solid 5px rgb(156, 156, 156);
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: rgb(184, 177, 184);
+	color: white;
+}
+.contbus{
+    display:flex;
+    text-align:center;
+    justify-content: center;
+}
+
+.buscar{
+    margin-top:30px;
+    width:40vw;
+    height:100px;
+    border: 1px solid black;
+}

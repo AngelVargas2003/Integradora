@@ -1,0 +1,42 @@
+<?php
+    
+    namespace proyecto;
+ 
+
+    use PDO;
+    use function json_encode;
+
+    /**
+     * Class Empleados
+     */
+    
+    class empleados extends modelsclientes
+    {
+        /**
+         * @var array
+         */
+        protected $filleable = ["nombre", "correo", "contraseña", "teléfono", "edad", "genero", "direccion", "especialidad", "codval", "horario"];
+        protected $table = "empleados";
+        public $nombre = "";
+        public $correo = "";
+        public $contraseña = "";
+        public $teléfono = "";
+        public $edad = "";
+        public $genero = "";
+        public $direccion = "";
+        public $especialidad = "";
+        public $codval = "";
+        public $horario = "";
+    
+    
+        /*public function PersonaMayores($edad){
+            
+            $stmt = self::$pdo->prepare("select *  from $this->table  where  edad>=:edad");
+            $stmt->bindParam(":edad",$edad);
+            $stmt->execute();
+            $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);
+            return  json_encode($resultados);
+        }*/
+        
+        
+    }
