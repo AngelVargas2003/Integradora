@@ -1,0 +1,63 @@
+.footermap{
+    display:grid;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: .25rem;
+    border-width: 0;
+    grid-template-areas: "foo1 foo2 foo3";
+    height:470px;
+    width: 100vw;
+    margin-left:1px;
+    background-color: #333;
+}
+
+.foo1{
+    grid-area: foo1;
+    border-bottom: 5px solid #ebe3f0;
+    border-radius: .25rem;
+    background-color: #fff;
+}
+
+.foo2{
+    grid-area: foo2;
+    border-bottom: 5px solid #ebe3f0;
+    border-radius: .25rem;
+    background-color: #fff;
+}
+
+.foo3{
+    grid-area: foo3;
+    border-bottom: 5px solid #ebe3f0;
+    border-radius: .25rem;
+    background-color: #fff;
+    
+}
+.mapa{
+    display: flex;
+    height: auto;
+    width: auto;
+    
+    background-color: #333;
+}
+.fo1 h2{
+    color: white;
+}
+.fo1{
+    grid-area: fo1;
+    justify-content: center;
+    align-items: center;
+    margin: 200px;
+}
+.mapa .fo1 span:nth-child(1)
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #ebe3f0);
+    animation: animacion1 2s linear infinite;
+}
+.map{
+    grid-area: map;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/inicioestilos.css">
+    <link rel="icon" href="img/Vivadentlogoresult.png" type="image/x-icon">
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/cssreserva.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script>
+      $(function(){
+         $("#txtfecha").datepicker()({
+           dateFormat:"yy-mm-dd"
+         });
+      });
+    </script>
+    <title>Reservar cita</title>
+</head>
+<body>
+    <nav style="margin: 0;" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div style="background-color: black; height: 125px; margin: 0;" class="container-fluid">
+          <a href="inicio.html"><img src="img/Vivadentlogoresult.png" alt="" width="85" height="85"/></a><a style="color: white;" class="navbar-brand" href="#"> Viva Dent </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="Inicio.html">Inicio   </a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link" href="ReservarcitasA.html">Reservar Citas   </a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link" href="Registroclientes.html">Registrate   </a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link" href="consultas.html">Consultas   </a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link" href="blog.html">Blog   </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <form action="" method="post">
+        <div class="conpri">
+          <label style="color: black; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="age" for=""></label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre Completo</span>
+            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="Nombre" required>
+          </div>
+          
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Telefóno</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" name="telefono" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Correo</span>
+            <input type="email" class="form-control" placeholder="example@gmail.com" id="basic-url" aria-describedby="basic-addon3" name="correo" required>
+          </div>
+          
+          <div class="input-group mb-3">
+            <span class="input-group-text">Servicio</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required name="servicio">
+          </div>
+          
+          <div class="input-group mb-3">
+            <span class="input-group-text">Hora de Consulta</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" name="horacon" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Fecha de Consulta</span>
+            <input type="text" class="form-control" id="txtfecha" placeholder="" aria-label="Username" readonly name="fechacon" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Doctor</span>
+            <div class="dropdown">
+               <select style="width: 100%;" class="form-select" aria-label="Disabled select example">
+                <option selected></option>
+                <option value="1">Juan Castorena</option>
+                <option value="2">Angel Vargas</option>
+                <option value="3">Jonathan Ismael</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <button type="submit" class="btn btn-dark">Agendar Cita</button>
+          </div>
+    </div>
+      </form>
+      <footer class="footer">
+            <div class="foo1">
+                <h2>Contactos</h2>
+                <p>(871) 1851679</p>
+                <p>(871) 4709784</p>
+            </div>
+            <div class="foo2">
+                <h2>Pagina de facebook</h2>
+                <p><a>https://www.facebook.com/dra.vanessaveraluis</a></p>
+            </div>
+            <div class="foo3">
+                <h2>Solo Para Empleados</h2>
+                <button type="button" class="btn btn-outline-light"><a href="login.html">Iniciar Sesión</a></button>
+                <button type="button" class="btn btn-outline-light"><a href="RegistroEM.html">Registrarse</a></button>
+            </div>
+        </footer>
+    </div>
+     <?php
+     include("reservar.php");
+     
+     ?>
+
+</body>
+</html>

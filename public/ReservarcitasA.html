@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/inicioestilos.css">
+    <link rel="icon" href="img/Vivadentlogoresult.png" type="image/x-icon">
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/cssreserva.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script>
+      $(function(){
+         $("#txtfecha").datepicker()({
+           dateFormat:"yy-mm-dd"
+         });
+      });
+    </script>
+    <title>Reservar cita</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container logo-nav-container">
+        <a href="#" class="logo"><img src="img/Vivadentlogoresult.png" alt="" width="80px" height="80px"></a>
+        <span class="menu-icon">Ver menú</span>
+    
+        <nav class="navigation">
+            <ul class="show">
+                <li><a href="Inicio.html">Inicio</a></li>
+                <li><a href="ReservarcitasA.html">Reservar Citas</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+      <form action="" method="post">
+        <div class="conpri">
+          <label style="color: black; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="age" for=""></label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre Completo</span>
+            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="Nombre" required>
+          </div>
+          
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Telefóno</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" name="telefono" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Correo</span>
+            <input type="email" class="form-control" placeholder="example@gmail.com" id="basic-url" aria-describedby="basic-addon3" name="correo" required>
+          </div>
+          
+          <div class="input-group mb-3">
+            <span class="input-group-text">Servicio</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required name="servicio">
+          </div>
+          
+          <div class="input-group mb-3">
+            <span class="input-group-text">Hora de Consulta</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" name="horacon" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Fecha de Consulta</span>
+            <input type="text" class="form-control" id="txtfecha" placeholder="" aria-label="Username" readonly name="fechacon" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Doctor</span>
+            <div class="dropdown">
+               <select style="width: 100%;" class="form-select" aria-label="Disabled select example">
+                <option selected></option>
+                <option value="1">Juan Castorena</option>
+                <option value="2">Angel Vargas</option>
+                <option value="3">Jonathan Ismael</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <button type="submit" class="btn btn-dark">Agendar Cita</button>
+          </div>
+    </div>
+      </form>
+      </div>
+    <footer class="mapa">
+      <div class="fo1">
+        <span></span>
+        <h2>¿Dondé encontrarnos?</h2>
+      </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2545.340944078073!2d-103.44252800093672!3d25.54984371228647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fdbd031016ed5%3A0x3256ca4b576f3581!2sFrancisco%20I.%20Madero%20895%2C%20Segundo%20de%20Cobi%C3%A1n%20Centro%2C%2027000%20Torre%C3%B3n%2C%20Coah.!5e0!3m2!1ses!2smx!4v1628017128619!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </footer>
+    <footer class="footer">
+      <div class="foo1">
+          <h2>Contactos</h2>
+          <p>(871) 1851679</p>
+          <p>(871) 4709784</p>
+      </div>
+      <div class="foo2">
+          <h2>Pagina de facebook</h2>
+          <p><a>https://www.facebook.com/dra.vanessaveraluis</a></p>
+      </div>
+      <div class="foo3">
+          <h2>Solo Para Empleados</h2>
+          <button type="button" class="btn btn-outline-light"><a href="login.html">Iniciar Sesión</a></button>
+          <button type="button" class="btn btn-outline-light"><a href="RegistroEM.html">Registrarse</a></button>
+      </div>
+  </footer>
+
+</body>
+</html>
