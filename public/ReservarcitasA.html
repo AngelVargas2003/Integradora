@@ -25,8 +25,6 @@
   <header class="header">
     <div class="container logo-nav-container">
         <a href="#" class="logo"><img src="img/VD2021.png" alt="" width="80px" height="80px"></a>
-        <span class="menu-icon">Ver menú</span>
-    
         <nav class="navigation">
             <ul class="show">
               <li><a href="Inicio.html">Inicio</a></li>
@@ -37,53 +35,59 @@
         </nav>
     </div>
 </header>
-      <form action="" method="post">
-        <div class="conpri">
-          <label style="color: black; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="age" for=""></label>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Nombre Completo</span>
-            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="Nombre" required>
-          </div>
-          
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">Telefóno</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" name="telefono" required>
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon3">Correo</span>
-            <input type="email" class="form-control" placeholder="example@gmail.com" id="basic-url" aria-describedby="basic-addon3" name="correo" required>
-          </div>
-          
-          <div class="input-group mb-3">
-            <span class="input-group-text">Servicio</span>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required name="servicio">
-          </div>
-          
-          <div class="input-group mb-3">
-            <span class="input-group-text">Hora de Consulta</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" name="horacon" required>
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Fecha de Consulta</span>
-            <input type="text" class="form-control" id="txtfecha" placeholder="" aria-label="Username" readonly name="fechacon" required>
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Doctor</span>
-            <div class="dropdown">
-               <select style="width: 100%;" class="form-select" aria-label="Disabled select example">
-                <option selected></option>
-                <option value="1">Juan Castorena</option>
-                <option value="2">Angel Vargas</option>
-                <option value="3">Jonathan Ismael</option>
-              </select>
-            </div>
-          </div>
-          <div style="display: flex; justify-content: center; align-items: center;">
-            <button type="submit" class="btn btn-dark">Agendar Cita</button>
-          </div>
-    </div>
-      </form>
+<div class="content" id="app">
+  <div class="contact-wrapper animated bounceInUp">
+      <div class="contact-form">
+          <h3 style="color: white;">Reservar una cita</h3>
+          <form action="">
+              <p>
+                  <label>Ingrese su Nombre</label>
+                  <input v-model="persona.nombre" type="text" name="nombre">
+              </p>
+              <p>
+                  <label>Ingrese su Correo</label>
+                  <input v-model="persona.correo" type="email" name="correo">
+              </p>
+              <p>
+                  <label>Ingrese su Telefono</label>
+                  <input v-model="persona.telefono" type="tel" name="telefono">
+              </p>
+              <p>
+                  <label>Servicio</label>
+                  <select v-model="persona.edad" name="edad">
+                     <option></option> <option>Limpieza dental</option>
+                  </select>
+              </p>
+              <p>
+                  <label>Hora de consulta</label>
+                  <input v-model="persona.direccion" type="text" name="direccion">
+              </p>
+              <p>
+                  <label>Fecha de consulta</label>
+                  <input v-model="persona.contrasena" type="" name="contrasena" id="txtfecha" readonly>
+              </p>
+              <!--<p class="block">
+                 <label>Message</label> 
+                  <textarea name="message" rows="3"></textarea>
+              </p>-->
+              <p class="block">
+                  <button type="button" @click="enviarFor" value="Registrar"> Reservar cita </button>
+              </p>
+          </form>
       </div>
+      <div class="contact-info">
+          <h4 style="color: white;">Viva Dent</h4>
+          <ul>
+              <li><i class="fas fa-clock"></i >  9:00 - 20:00</li>
+              <li><i  class="fas fa-phone"></i >  871 185 1679</li>
+              <li><i  class="fas fa-envelope-open-text"></i style="color: white;">  doctora@dentalvera.com</li>
+          </ul>
+          <p style="color: white;">Gracias por visitarnos</p>
+          <p style="color: white;">www.vivadent.com</p><br><br>
+          </div>
+  </div>
+</div>
+      
     <footer class="mapa">
       <div class="fo1">
         <span></span>
