@@ -19,10 +19,9 @@
         
         public function __construct()
         {
-            $cc = new  Conexion("vivadent", "127.0.0.1", "root", "Juan1812");
+            $cc = new  Conexion("vivad", "localhost", "root", "Juan1812");
             self::$pdo = $cc->getPDO();
         }
-
         public function create(array $obj)
         {
             $campos = "(";
@@ -37,17 +36,18 @@
                 $valores .= ":" . $prop;
                 $valores .= $long > $i ? "," : "";
             }
-
             $campos .= " )";
             $valores .= " )";
+            
             $stmt = self::$pdo->prepare("INSERT INTO $this->table   $campos VALUES  $valores");
             
             foreach ($obj as $prop => $val) {
                 $stmt->bindValue(":$prop", $val);
             }
+            
+            
             $stmt->execute();
         }
-
         public function save()
         {
             $ob = [];
@@ -58,7 +58,6 @@
             }
             $this->create($ob);
         }
-
         public function all(){
           
           
@@ -100,3 +99,6 @@
             }
             return  json_encode($resultados[0]);
         }
+       
+        
+    }

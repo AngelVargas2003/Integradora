@@ -185,6 +185,7 @@ body{
     color: white;
 }
 .fo1{
+    grid-area: fo1;
     justify-content: center;
     align-items: center;
     margin: 200px;
@@ -198,4 +199,7 @@ body{
     height: 3px;
     background: linear-gradient(to right, transparent, #ebe3f0);
     animation: animacion1 2s linear infinite;
+}
+.map{
+    grid-area: map;
 }

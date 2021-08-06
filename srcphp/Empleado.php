@@ -7,20 +7,27 @@
     use function json_encode;
 
     /**
-     * Class Persona
+     * Class Cliente
      */
     
-    class Persona extends Models
+    class Empleado extends Models
     {
         /**
          * @var array
          */
-        protected $filleable = ["nombre", "edad", "apellido_paterno", "apellido_materno"];
-        protected $table = "personas";
+        protected $filleable = ["nombre", "correo", "telefono", "edad","direccion","genero","contrasena","codval","horario"];
+        protected $table = "empleados";
         public $nombre = "";
+        public $correo = "";
+        public $telefono = "";
         public $edad = "";
-        public $apellido_paterno = "";
-        public $apellido_materno = "";
+        public $direccion = "";
+        public $genero = "";
+        public $codval = "";
+        public $horario = "";
+        
+        
+        
     
     
         public function PersonaMayores($edad){

@@ -9,12 +9,11 @@
         /**
          * Conexion constructor.
          */
-        public static $DB = "";
-        public $host =  "127.0.0.1";
-        public $dbname = "vivadent";
-        public $user = "root";
-        public $password = "Juan1812";
-        public $conect;
+        public static $DB = null;
+        public $dbname = "";
+        public $host = "";
+        public $user = "";
+        public $password = "";
         /**ic
          * Conexion constructor.
          * @param string $dbname
@@ -22,26 +21,10 @@
          * @param string $user
          * @param string $password
          */
-
-        public function conexiondb()
-        {
-            $conexionpro=mysqli_connect($this->host, $this->user, $this->password, $this->dbname)
-            or die("Error al conectarse con la bd");
-            return $conexionpro;
-        }
-
-        public function cerrarconexionpro($conexionpro)
-        {
-            mysqli_close($conexionpro);
-        }
-
-            
-
-
         public function __construct(string $dbname, string $host, string $user, string $password)
         {
-            $this->host = $host;
             $this->dbname = $dbname;
+            $this->host = $host;
             $this->user = $user;
             $this->password = $password;
         }
@@ -118,7 +101,7 @@
         public function getPDO(): PDO
         {
             try {
-                $dsn = "mysql:host=127.0.0.1;dbname=$this->dbname";
+                $dsn = "mysql:host=localhost;dbname=$this->dbname";
                 self::$DB = new PDO($dsn, $this->user, $this->password);
                 return self::$DB;
             } catch (PDOException $e) {
