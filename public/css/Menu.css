@@ -1,0 +1,170 @@
+/*.header {
+    display: grid;
+    background: #333;
+    justify-content: space-between;
+    color: white;
+    padding: 2rem 0;
+    flex-direction: column;
+    grid-template-areas: "p1 p2 p3";
+    height:200px;
+    width: 100vw;
+     hacer el menu fijo
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* ocuapamos todo el ancho
+    
+  }*/
+
+  .headermenu {
+    position: relative;
+    display: grid;
+    background-color: #333;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 100px;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-width: 0;
+    grid-template-areas: "menulogo menunav menuser";
+    column-gap: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+
+  
+.headermenu .menulogo{
+    grid-area: menulogo;
+    justify-content: center;
+    align-items: center;
+}
+
+.headermenu .menunav{
+    grid-area: menunav;
+    color: #FFF;
+    margin-top: 30px;
+    justify-items: center;
+    text-align: center;
+}
+
+.headermenu .menuser{
+    grid-area: menuser;
+}
+
+  .header a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logo-nav-container {
+    display: flex;
+    justify-content: space-between;
+    /* lo alineamos al centro */
+    align-items: center;
+  
+    flex-wrap: wrap;
+  }
+  
+  .imguser{
+      border-radius: 100%;
+      border: white solid 1px;
+      margin-top: 15px;
+  }
+   .menuser .imguser .logo{
+      font-size: 10px;
+      display: block;
+      padding: 0.5rem 1rem;
+      transition: all 0.2s linear;
+      border-radius: 5px;
+      color:#fff;
+  }
+
+
+
+  /* logo */
+  .logo {
+    letter-spacing: 10px;
+    font-size: 1.3em;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  /* todos los "ul" que esten dentro de "navigation" */
+  .menunav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color:#fff;
+  }
+  
+  .menunav ul li {
+    /* uno al lado del otro */
+    display: inline-block;
+    color:#fff;
+  }
+  
+  /* los enlaces dentro del menu */
+  .menunav ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+    color:#fff;
+  }
+  
+  .menunav ul li a:hover {
+    background: #9b9898;
+  }
+  
+  .main {
+    padding-top: 12rem;
+  }
+  
+  /*PIE DE PAGINA*/
+  
+  .menu-link{
+      color: #FFF;
+  }
+  
+  .fb{
+      color: blue;
+  }
+  /* REPONSIVE */
+  /* todas las caracteristicas que se mostraran a continuancion seran cuando tenga un ancho maximo de 767px */
+  
+  @media only screen and (max-width: 1000px) {
+      .menu-icon{
+          display: block;
+          cursor: pointer;
+      }
+  
+      .menunav{
+          width: 100%;
+      }
+      .menunav ul{
+          display: none;
+      }
+      .menunav ul.show{
+          display: block;
+      }
+        
+      .menunav ul li {
+          display: block;
+        }
+        
+        /* los enlaces dentro del menu */
+        .menunav ul li a {
+          display: block;
+          padding: 0.5rem 1rem;
+          transition: all 0.2s linear;
+          border-radius: 5px;
+        }
+        
+        .menunav ul li a:hover {
+          background: #cc4444;
+        }
+  }

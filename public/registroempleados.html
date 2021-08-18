@@ -42,7 +42,7 @@
                         <select v-model="persona.edad" name="edad">
                             <option></option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option>
                             <option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
-                            <option>13</option><option>14</option><option>15</option><option>16</option><option>17</option>
+                            <option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option>
                             <option>19</option><option>20</option><option>21</option><option>22</option><option>23</option>
                             <option>24</option><option>25</option><option>26</option><option>27</option><option>28</option>
                             <option>29</option><option>30</option><option>31</option><option>32</option><option>33</option>
@@ -78,7 +78,7 @@
                     <p>
                         <label>Selecionar Horario</label>
                         <select v-model="persona.horario" name="horario">
-                            <option></option><option>9:00 - 19:00</option><option>9:00 - 20:00</option><option>9:00 - 17:00</option>
+                            <option></option><option>10</option><option>11</option>
                         </select>
                     </p>
 
@@ -104,6 +104,9 @@
                 <p>www.vivadent.com</p><br><br>
                 <p class="block">
                     <a href="registroclientes.html"><button type="button" value="Registrar"> Registrarse como cliente </button></a>
+                </p>
+                <p class="block">
+                    <a href="loginem.php"><button type="button" value="Registrar"> Iniciar Seccion como empleado </button></a>
                 </p>
             </div>
         </div>
@@ -146,6 +149,7 @@
                 params.append('horario', this.persona.horario);
 
 				axios.post('controller/insertarempleado.php', params)
+
 				.then(function (response) {
 
 					console.log(response);

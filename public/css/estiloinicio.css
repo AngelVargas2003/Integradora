@@ -9,18 +9,3 @@ body::-webkit-scrollbar-thumb {
     background-color: #dfdfdf;
     border-radius: 10px;
 }
-.mapa{
-    display: flex;
-    height: auto;
-    width: auto;
-    
-    background-color: #333;
-}
-.fo1 h2{
-    color: white;
-}
-.fo1{
-    justify-content: center;
-    align-items: center;
-    margin: 200px;
-}

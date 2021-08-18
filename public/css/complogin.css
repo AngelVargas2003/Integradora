@@ -1,0 +1,8 @@
+.contact-info .linkfull{
+    text-decoration: none;
+      color: #cacaca;
+    font-weight: 600;
+}
+.contact-info .linkfull:hover{
+     color: rgb(244, 253, 179);
+}

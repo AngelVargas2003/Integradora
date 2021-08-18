@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/menuconsu.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>Empelados</title>
+  <style>
+  #app{
+      background-color:#333;
+  }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <v-app>
+        <v-main>        
+          <v-card class="mx-auto mt-5" max-width="1200" margin-top="100">        
+          <v-data-table
+              :headers="columnas"
+              :items="empleados"
+              class="elevation-19"
+          ></v-data-table>
+          </v-card>
+        </v-main>
+      </v-app>
+
+
+      <template>
+        <v-bottom-navigation
+          :value="value"
+          color="primary">
+
+          <v-icon src="img/VD2021.png"></v-icon>
+
+          <v-btn href="newconsultas.php" value="recent">
+            <span>Regresar</span>
+            <v-icon>mdi-history</v-icon>
+          </v-btn>
+
+          <v-btn href="Inicio.html">
+            <span>Inicio</span>
+            <v-icon>mdi-home</v-icon>
+          </v-btn>
+      
+          <v-btn href="ReservarcitasA.php">
+            <span>Reservar Citas</span>
+            <v-icon>mdi-file</v-icon>
+          </v-btn>
+      
+          <v-btn href="newconsultas.html">
+            <span>Consultas</span>
+            <v-icon>mdi-file</v-icon>
+          </v-btn>
+
+          <v-btn href="registroempleados.php">
+            <span>Registrarse</span>
+            <v-icon>mdi-login</v-icon>
+          </v-btn>
+          <v-btn href="cerrarsession.php">
+            <span>Cerrar seccion</span>
+            <v-icon>mdi-login</v-icon>
+          </v-btn>
+        </v-bottom-navigation>
+      </template>
+      
+      
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
+  
+  
+
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data(){
+          return{ 
+            columnas: [
+                    { text: 'Identificador', value: 'id_empleados', class: 'green accent-2'},
+                    { text: 'Cliente', value: 'nombre', class: 'green accent-2' },
+                    { text: 'Correo', value: 'correo', class: 'green accent-2' },
+                    { text: 'Telefono', value: 'telefono', class: 'green accent-2' },
+                    { text: 'Edad', value: 'edad', class: 'green accent-2' },
+                    { text: 'Direccion', value: 'direccion', class: 'green accent-2' },
+                    { text: 'Genero', value: 'genero', class: 'green accent-2' } ,
+                    { text: 'Contrasena', value: 'contrasena', class: 'green accent-2' },
+                    { text: 'Horario', value: 'horario', class: 'green accent-2' },                   
+               ],             
+               empleados: [
+               {class: 'gray'}],
+          }
+      },
+      created(){       
+        axios.get("/motTemp.php").then(response =>{
+           this.empleados    = response.data;       
+            console.log(this.empleados);           
+        });
+       
+      }
+    })
+  </script>
+  <script>
+    export default {
+      data: () => ({ value: 1 }),
+    }
+  </script>
+</body>
+</html>

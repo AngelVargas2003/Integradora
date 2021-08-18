@@ -1,0 +1,44 @@
+@import url('http://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+:root{
+    --primary-color:white;
+    --secodary-color:rgb(61,68,73);
+    --highligth-color: #3282b8;
+
+    --dt-status-avalibe-color:greenyellow;
+    --dt-status-avalibe-away-color: lightsalmon;
+    --dt-status-offline-color: lightgray;
+    
+    --dt-padding: 12px;
+    --dt-padding-s: 6px;
+    --dt-padding-xs: 2px;
+
+    --dt-border-radius: 3px;
+
+    --dt-background-color-container: #2a3338;
+    --dt-border-color: var(--secodary-color);
+    --dt-bg-color: var(--highligth-color);
+    --dt-text-color: var(--primary-color);
+    --dt-bg-active-button: var(--highligth-color);
+    --dt-text-color-button: var(--primary-color);
+    --dt-text-color-active-button: var(--primary-color);
+    --dt-hover-cell-color: var(--highligth-color);
+    --dt-even-row-color: var(--secodary-color);
+    --dt-focus-color: var(--highligth-color);
+    --dt-input-background-color: var(--secodary-color);
+    --dt-input-color: var(--primary-color);
+}
+
+.material-icons{
+    font-size: 16px;
+}
+
+.datetable-container{
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--dt-background-color-container);
+    border-radius: var(--dt-border-radius);
+    color: var(--dt-text-color);
+    width: 600px;
+    margin: 0 auto;
+    font-size: 12px;
+}

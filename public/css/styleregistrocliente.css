@@ -108,6 +108,8 @@ ul {
     cursor: pointer;
 }
 
+
+
 /* CONTACT INFO */
 .contact-info {
     background: #000;
@@ -142,7 +144,14 @@ ul {
     outline: 0;
     cursor: pointer;
 }
-
+.contact-info .linkfull{
+    text-decoration: none;
+      color: #cacaca;
+    font-weight: 600;
+}
+.contact-info .linkfull:hover{
+     color: rgb(244, 253, 179);
+}
 
 
 select::-webkit-scrollbar {

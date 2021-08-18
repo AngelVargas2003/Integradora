@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/csslogin.css">
+</head>
+<body>
+    <div class="cont" id="app">
+      <div class="contimg">
+        <a href="inicio.html"><img src="img/VD2021.png" alt="logo de Vivadent"></a>
+      </div>
+    </div>
+      <form>
+        <div class="group">
+          <input type="text" v-model="persona.correo" name="correo"><span class="highlight"></span><span class="bar"></span>
+          <label>Email</label>
+        </div>
+
+        <div class="group">
+          <input type="password" v-model="persona.contrasena" name="contrasena"><span class="highlight"></span><span class="bar"></span>
+          <label>Contraseña</label>
+        </div>
+        
+        <button type="button" class="button" id="btnguardar" @click="enviardatos">Inicia sesion
+          <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+
+           
+          <!--<input type="button" @click="enviardatos" value="Inicia sesion" class="button">-->
+        </button>
+        
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <a href="registroclientes.html" class="link">¿No tienes una cuenta? | Registarse</a></p>
+         </form>
+     </div>
+    
+     
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+	<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			message: 'Registro de  Mensaje',
+			mostrarerror: false,
+           persona:{
+			   correo:"",
+			   contrasena:"",
+
+           },
+		},
+        methods:{
+			enviardatos:function(){
+				var params = new URLSearchParams();
+				params.append('correo', this.persona.correo);
+				params.append('contrasena', this.persona.contrasena);
+
+				axios.post('controller/iniciarsessionemp.php', params)
+
+        .then(function (response) {
+
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
+				then((response) => {
+					this.mostrarerror=!response.data.acceso;
+					if(response.data.acceso){
+						window.location="/";
+            }
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
+            }
+        }
+	})
+</script>
+
+
+
+</body>
+</html>

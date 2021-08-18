@@ -23,12 +23,10 @@
         public $edad = "";
         public $direccion = "";
         public $genero = "";
+        public $contrasena = "";
         public $codval = "";
         public $horario = "";
-        
-        
-        
-    
+
     
         public function PersonaMayores($edad){
             
@@ -37,7 +35,5 @@
             $stmt->execute();
             $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);
             return  json_encode($resultados);
-        }
-        
-        
+        }   
     }

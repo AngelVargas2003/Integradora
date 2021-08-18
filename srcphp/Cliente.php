@@ -26,17 +26,4 @@
         public $contrasena = "";
         
         
-        
-    
-    
-        public function PersonaMayores($edad){
-            
-            $stmt = self::$pdo->prepare("select *  from $this->table  where  edad>=:edad");
-            $stmt->bindParam(":edad",$edad);
-            $stmt->execute();
-            $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);
-            return  json_encode($resultados);
-        }
-        
-        
     }
